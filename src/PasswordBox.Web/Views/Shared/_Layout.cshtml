@@ -15,7 +15,7 @@
 
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/dashboard.css" rel="stylesheet" />
-
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/lib/toastr/toastr.min.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
 
@@ -37,7 +37,7 @@
             @Html.Partial("_Menu")
 
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
+                <div id="alert"></div>
                 @RenderBody()
 
             </div>

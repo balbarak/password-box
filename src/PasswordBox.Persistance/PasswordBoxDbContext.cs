@@ -19,7 +19,9 @@ namespace PasswordBox.Persistance
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ProductItem> ProductItems { get; set; }
-        
+
+        public DbSet<Account> Accounts { get; set; }
+
         public PasswordBoxDbContext()
         {
 

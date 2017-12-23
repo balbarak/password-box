@@ -121,10 +121,10 @@
     <value>لايوجد بيانات</value>
   </data>
   <data name="OperationFailed" xml:space="preserve">
-    <value>تعذر اتمام العملية</value>
+    <value>Operation Failed</value>
   </data>
   <data name="OperationSuccess" xml:space="preserve">
-    <value>تمت العملية بنجاح</value>
+    <value>Operation Success</value>
   </data>
   <data name="PleaseFixTheFollowingErrors" xml:space="preserve">
     <value>الرجاء اصلاح الاخطاء التالية</value>

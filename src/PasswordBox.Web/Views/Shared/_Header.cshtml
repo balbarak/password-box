@@ -11,14 +11,22 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="#">My Accounts</a></li>
+                <li>
+
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        User
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Change Password</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+
+                </li>
             </ul>
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search...">
-            </form>
+
         </div>
     </div>
 </nav>

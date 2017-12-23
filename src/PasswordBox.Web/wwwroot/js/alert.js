@@ -130,23 +130,7 @@ function setAlert(options) {
 
         debugger;
 
-        if ($('.page-fixed-main-content').size() === 1) {
-            $('.page-fixed-main-content').prepend(html);
-        } else if (($('body').hasClass("page-container-bg-solid") || $('body').hasClass("page-content-white")) && $('.page-head').size() === 0) {
-            $('.page-title').after(html);
-        } else {
-            if ($('.page-bar').size() > 0) {
-                $('.page-bar').after(html);
-            } else {
-                $('.page-breadcrumb, .breadcrumbs').after(html);
-            }
-        }
-    } else {
-        if (options.place == "append") {
-            $(options.container).append(html);
-        } else {
-            $(options.container).prepend(html);
-        }
+        $("#alert").html(html);
     }
 
     if (options.closeInSeconds > 0) {

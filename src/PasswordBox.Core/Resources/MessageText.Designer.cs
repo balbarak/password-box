@@ -70,7 +70,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تعذر اتمام العملية.
+        ///   Looks up a localized string similar to Operation Failed.
         /// </summary>
         public static string OperationFailed {
             get {
@@ -79,7 +79,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تمت العملية بنجاح.
+        ///   Looks up a localized string similar to Operation Success.
         /// </summary>
         public static string OperationSuccess {
             get {

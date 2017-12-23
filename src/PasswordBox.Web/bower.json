@@ -9,6 +9,7 @@
     "moment": "2.19.1",
     "jquery-ajax-unobtrusive": "v3.2.4",
     "jquery.validate.unobtrusive.bootstrap": "*",
-    "toastr": "2.1.3"
+    "toastr": "2.1.3",
+    "font-awesome": "font-awsome#v4.7.0"
   }
 }
