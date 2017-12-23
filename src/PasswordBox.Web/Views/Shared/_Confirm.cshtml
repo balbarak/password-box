@@ -1,0 +1,75 @@
+﻿
+<div class="modal fade"
+     id="confirm-modal"
+     data-backdrop="static"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content" id="confirm-content">
+
+            <form id="confirm-form" action="" method="post">
+
+                @Html.AntiForgeryToken()
+
+                <input type="hidden" id="confirm-id" />
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">
+                        @CommonText.ConfirmAction
+                    </h4>
+                </div>
+
+                <div class="modal-body">
+                    <div id="confirm-alert"></div>
+                    <h4>
+                        @CommonText.AreYouSure
+                    </h4>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">
+                        @CommonText.Yes
+                    </button>
+                    <button type="button" data-dismiss="modal" class="btn btn-danger">
+                        @CommonText.No
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<bootstrap-modal id="confirm-ajax-modal" asp-content-id="confirm-ajax-content">
+    <bootstrap-modal-header>
+        <h4 class="modal-title">
+            @CommonText.ConfirmAction
+        </h4>
+    </bootstrap-modal-header>
+    <form asp-ajax="true"
+          asp-ajax-modal="#confirm-ajax-modal"
+          asp-ajax-block="#confirm-ajax-content"
+          asp-ajax-error="#confirm-ajax-alert"
+          asp-ajax-success-method="updateList();"
+          method="post"
+          id="confirm-ajax-form"
+          action="">
+        <bootstrap-modal-body>
+            <div id="confirm-ajax-alert" data-alert=""></div>
+            <h4>
+                @CommonText.AreYouSure
+            </h4>
+        </bootstrap-modal-body>
+        <bootstrap-modal-footer asp-show-close-button="false">
+            <button type="submit" class="btn btn-success">
+                @CommonText.Yes
+            </button>
+            <button type="button" data-dismiss="modal" class="btn btn-danger">
+                @CommonText.No
+            </button>
+        </bootstrap-modal-footer>
+    </form>
+</bootstrap-modal>

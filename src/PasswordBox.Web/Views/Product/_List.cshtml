@@ -1,0 +1,44 @@
+﻿@model SearchResult<Product>
+
+
+@if (Model.Result.Any())
+{
+    for (var i = 0; i < Model.Result.Count; i += 3)
+    {
+
+        <div class="row">
+            @foreach (var item in Model.Result.Skip(i).Take(3))
+            {
+                <div class="col-md-4">
+                    @Html.Partial("_Item", item)
+                </div>
+            }
+        </div>
+
+    }
+
+    <p>
+        <strong>
+            @CommonText.Total:
+        </strong>
+        @Model.TotalResultsCount.ToString("N0")
+    </p>
+
+    <cs-pager cs-paging-pagesize="@Model.PageSize"
+              cs-paging-pagenumber="@Model.PageNumber"
+              cs-paging-totalitems="@Model.TotalResultsCount"
+              cs-ajax-target="#list"
+              cs-ajax-begin="block('#list')"
+              cs-ajax-complete="unblock('#list')"
+              asp-controller="Member"
+              asp-action="Index">
+
+    </cs-pager>
+
+    <input type="hidden" data-page="@(Model.PageCount >= Model.PageNumber ? Model.PageNumber : Model.PageNumber - 1)" />
+
+}
+else
+{
+    <metronic-empty-note />
+}

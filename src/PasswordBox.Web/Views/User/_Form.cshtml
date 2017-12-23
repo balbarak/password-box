@@ -1,0 +1,46 @@
+﻿@model UserViewModel
+
+@{
+    var roles = RoleService.Instance.GetAll();
+    var userRoles = await RoleService.Instance.GetRolesByUserIdAsync(Model.Id);
+}
+
+<input asp-for="Id" type="hidden" />
+
+<bootstrap-input-form-group for="Username" />
+
+<bootstrap-input-form-group for="Email" />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <bootstrap-password-form-group for="Password" />
+
+    </div>
+    <div class="col-md-6">
+
+        <bootstrap-password-form-group for="ConfirmPassword" />
+
+    </div>
+</div>
+
+<h4>
+    الصلاحيات
+</h4>
+<hr />
+<div class="form-group">
+    <div class="input-group">
+        <div class="icheck-list">
+
+            @foreach (var role in roles)
+            {
+                <label>
+                    <input type="checkbox" name="@Html.NameFor(a=> a.Roles)" @(userRoles.Contains(role.Id) ? "checked" : "") value="@role.Id" class="icheck">
+                        @role.Name
+                </label>
+            }
+
+
+        </div>
+    </div>
+</div>

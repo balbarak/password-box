@@ -1,0 +1,14 @@
+﻿[
+  {
+    "Id": "PasswordBox.ADMIN",
+    "ConcurrencyStamp": "5C0A652A-09BC-4FBF-A673-211D4A645F2F",
+    "Name": "PasswordBox.ADMIN",
+    "NormalizedName": "PasswordBox.ADMIN"
+  },
+  {
+    "Id": "PasswordBox.USER",
+    "ConcurrencyStamp": "5C0A652A-09BC-4FBF-A553-211D4A645F2F",
+    "Name": "PasswordBox.USER",
+    "NormalizedName": "PasswordBox.USER"
+  }
+]

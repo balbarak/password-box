@@ -1,0 +1,46 @@
+﻿@model Product
+
+
+<div class="portlet light bordered">
+
+    <div class="portlet-title">
+
+        <div class="actions">
+            
+            <a asp-action="Edit" asp-route-id="@Model.Id"
+               class="btn btn-sm green">
+                <i class="fa fa-pencil"></i>
+                @CommonText.Edit
+            </a>
+
+            <button class="btn btn-sm red"
+                    data-action="@Url.Action("Delete","Product",new { id = Model.Id })"
+                    data-toggle="modal"
+                    data-target="#confirm-modal">
+                @CommonText.Delete
+            </button>
+        </div>
+    </div>
+    <div class="portlet-body">
+
+        <div class="scroller" style="height:180px" data-rail-visible="1" data-rail-color="white" data-handle-color="#32c5d2">
+
+            <h4>
+                @Model.Name.Brief(50)
+            </h4>
+            <p>
+                @Model.Description.Brief(100)
+            </p>
+
+            <ul>
+                @foreach (var item in Model.Items)
+                {
+                    <li>
+                        @item.Name
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+</div>

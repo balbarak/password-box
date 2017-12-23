@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        Password Box
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta content="Password Box System" name="description" />
+    <meta content="" name="author" />
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/dashboard.css" rel="stylesheet" />
+
+    <link href="~/lib/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    @RenderSection("styles", false)
+
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+
+</head>
+<!-- END HEAD -->
+
+<body>
+
+    @Html.Partial("_Header")
+
+    <div class="container-fluid">
+        <div class="row">
+
+            @Html.Partial("_Menu")
+
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                @RenderBody()
+
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_Footer")
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!--BEGIN PLUGINS -->
+    <script src="~/lib/toastr/toastr.min.js"></script>
+    <script src="~/js/alert.js"></script>
+    <script src="~/js/icheck-config.js"></script>
+    <!-- END PLUGINS -->
+
+    <!--BEGIN VALIDATION-->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/lib/jquery.validate.unobtrusive.bootstrap/jquery.validate.unobtrusive.bootstrap.min.js"></script>
+    <!--END VALIDATION-->
+
+    <script src="~/js/site.js"></script>
+
+    @RenderSection("scripts", false)
+
+    @Html.Partial("_Confirm")
+
+    <script>
+
+        $(function () {
+            setMetronicActiveLink();
+
+             @if (TempData.ContainsKey(WebConstants.ALERT))
+              {
+                  <text>
+
+                    var alertObject = @Html.Raw(TempData[WebConstants.ALERT]);
+                    showAlert(alertObject);
+
+                  </text>
+              }
+        });
+
+    </script>
+</body>
+
+</html>

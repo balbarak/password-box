@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section title{
+    @CommonText.Products
+}
+
+
+<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption font-green-sharp">
+            <i class="fa fa-user"></i>
+            <span class="caption-subject bold uppercase">
+                @CommonText.Products
+            </span>
+            <span class="caption-helper">
+
+            </span>
+        </div>
+        <div class="actions">
+            <a asp-area="" asp-controller="Product" asp-action="Add" class="btn green">
+                <i class="fa fa-plus"></i>
+                @CommonText.Add
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+
+        <div id="list">
+            @Html.Partial("_List")
+        </div>
+
+    </div>
+</div>
