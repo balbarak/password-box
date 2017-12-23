@@ -141,6 +141,9 @@
   <data name="ConfirmAction" xml:space="preserve">
     <value>تأكيد الاجراء</value>
   </data>
+  <data name="d" xml:space="preserve">
+    <value>d</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>حذف</value>
   </data>

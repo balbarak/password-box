@@ -133,6 +133,15 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to d.
+        /// </summary>
+        public static string d {
+            get {
+                return ResourceManager.GetString("d", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to حذف.
         /// </summary>
         public static string Delete {
