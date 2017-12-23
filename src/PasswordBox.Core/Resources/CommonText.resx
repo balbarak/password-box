@@ -118,25 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Action" xml:space="preserve">
-    <value>اجراء</value>
+    <value>Action</value>
   </data>
   <data name="Actions" xml:space="preserve">
-    <value>اجراءات</value>
+    <value>Actions</value>
   </data>
   <data name="Add" xml:space="preserve">
-    <value>اضف</value>
+    <value>Add</value>
   </data>
   <data name="AreYouSure" xml:space="preserve">
-    <value>هل أنت متأكد؟</value>
+    <value>Are you sure ?</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>الغاء</value>
+    <value>Cancel</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>التصنيفات</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>اغلاق</value>
+    <value>Close</value>
   </data>
   <data name="ConfirmAction" xml:space="preserve">
     <value>تأكيد الاجراء</value>
@@ -163,13 +163,13 @@
     <value>حفظ</value>
   </data>
   <data name="Select" xml:space="preserve">
-    <value>--- اختر ---</value>
+    <value>--- Select ---</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>المجموع</value>
+    <value>Total</value>
   </data>
   <data name="Update" xml:space="preserve">
-    <value>تحديث</value>
+    <value>Update</value>
   </data>
   <data name="Users" xml:space="preserve">
     <value>المستفيدين</value>

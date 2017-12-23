@@ -1,0 +1,11 @@
+﻿@model Account
+
+<div class="form-group">
+
+    <label class="control-label" asp-for="Username">
+        @Html.DisplayNameFor(a => a.Username)
+    </label>
+    <input type="text" asp-for="Username" class="form-control" />
+    <span asp-validation-for="Username"></span>
+
+</div>

@@ -61,7 +61,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to اجراء.
+        ///   Looks up a localized string similar to Action.
         /// </summary>
         public static string Action {
             get {
@@ -70,7 +70,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to اجراءات.
+        ///   Looks up a localized string similar to Actions.
         /// </summary>
         public static string Actions {
             get {
@@ -79,7 +79,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to اضف.
+        ///   Looks up a localized string similar to Add.
         /// </summary>
         public static string Add {
             get {
@@ -88,7 +88,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to هل أنت متأكد؟.
+        ///   Looks up a localized string similar to Are you sure ?.
         /// </summary>
         public static string AreYouSure {
             get {
@@ -97,7 +97,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to الغاء.
+        ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
             get {
@@ -115,7 +115,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to اغلاق.
+        ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Close {
             get {
@@ -196,7 +196,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to --- اختر ---.
+        ///   Looks up a localized string similar to --- Select ---.
         /// </summary>
         public static string Select {
             get {
@@ -205,7 +205,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to المجموع.
+        ///   Looks up a localized string similar to Total.
         /// </summary>
         public static string Total {
             get {
@@ -214,7 +214,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تحديث.
+        ///   Looks up a localized string similar to Update.
         /// </summary>
         public static string Update {
             get {

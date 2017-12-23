@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 class="page-header">
+    My Accounts
+</h1>
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+    <i class="fa fa-plus"></i>
+    Add New Account
+</button>
+
+
+
+<bootstrap-modal id="add-modal" asp-content-id="add-content" data-reset-form="true">
+
+    <bootstrap-modal-header>
+        <h4 class="modal-title">
+            @CommonText.Add
+        </h4>
+
+    </bootstrap-modal-header>
+
+    <form id="add-form"
+          asp-ajax="true"
+          asp-controller="Category"
+          asp-action="Add"
+          asp-ajax-error="#add-alert"
+          asp-ajax-modal="#add-modal"
+          asp-ajax-success-method="updateList();"
+          asp-ajax-block="#add-content"
+          method="post">
+
+        <bootstrap-modal-body>
+            <div id="add-alert" data-alert=""></div>
+
+            @Html.Partial("_Form", new Account())
+        </bootstrap-modal-body>
+
+        <bootstrap-modal-footer asp-show-close-button="true">
+
+            <button type="submit" class="btn btn-success">
+                @CommonText.Add
+            </button>
+        </bootstrap-modal-footer>
+
+    </form>
+
+</bootstrap-modal>
