@@ -1,0 +1,49 @@
+﻿@model SearchResult<Account>
+
+@if (Model.Result.Any())
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(a => a.Result.First().Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(a => a.Result.First().Website)
+            </th>
+            <th>
+                @Html.DisplayNameFor(a => a.Result.First().Note)
+            </th>
+            <th>
+                @CommonText.Actions
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Result)
+        {
+            <tr>
+                <td>
+                    @item.Username
+                </td>
+                <td>
+                    @item.Website
+                </td>
+                <td>
+                    @item.Note
+                </td>
+                <td width="180">
+                    <button class="btn btn-danger btn-sm"
+                            data-action="@Url.Action("Delete", "PasswordBox", new { id = item.Id })"
+                            data-toggle="modal"
+                            data-target="#confirm-ajax-modal">
+                        <i class="fa fa-trash"></i>
+                        @CommonText.Delete
+                    </button>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+
+}

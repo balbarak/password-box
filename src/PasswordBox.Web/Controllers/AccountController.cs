@@ -243,9 +243,7 @@ namespace PasswordBox.Web.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
@@ -458,7 +456,7 @@ namespace PasswordBox.Web.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(HomeController.Index), "PasswordBox");
             }
         }
 

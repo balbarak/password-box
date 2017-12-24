@@ -18,12 +18,12 @@ namespace PasswordBox.Web.Controllers
         public const string PARTIAL_LIST = "~/Views/User/_List.cshtml";
         public const string PARTIAL_FORM = "~/Views/User/_Form.cshtml";
 
-        [BreadCrumb(
-            TitleResourceName = nameof(CommonText.Users),
-            TitleResourceType = typeof(CommonText),
-            Icon = "icon-users",
-            UseDefaultRouteUrl = true,
-            Order = 0)]
+        //[BreadCrumb(
+        //    TitleResourceName = nameof(CommonText.Users),
+        //    TitleResourceType = typeof(CommonText),
+        //    Icon = "icon-users",
+        //    UseDefaultRouteUrl = true,
+        //    Order = 0)]
         public IActionResult Index(UserSearchViewModel model)
         {
             var result = UserService.Instance.Search(model);

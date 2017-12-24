@@ -1,17 +1,26 @@
-﻿
+﻿@model SearchResult<Account>
+
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/LoggedIn/_Layout.cshtml";
 }
+
 <h1 class="page-header">
     My Accounts
 </h1>
+
 
 <button class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
     <i class="fa fa-plus"></i>
     Add New Account
 </button>
 
+<br />
+<br />
 
+<div id="list">
+    @Html.Partial("_List")
+</div>
 
 <bootstrap-modal id="add-modal" asp-content-id="add-content" data-reset-form="true">
 
@@ -24,7 +33,7 @@
 
     <form id="add-form"
           asp-ajax="true"
-          asp-controller="Category"
+          asp-controller="PasswordBox"
           asp-action="Add"
           asp-ajax-error="#add-alert"
           asp-ajax-modal="#add-modal"
@@ -48,3 +57,18 @@
     </form>
 
 </bootstrap-modal>
+
+
+@section scripts{
+
+    <script>
+
+        function updateList() {
+
+             var url = '@Context.Request.GetEncodedPathAndQuery()';
+
+            updateContainer(url,"#list");
+        }
+
+    </script>
+}

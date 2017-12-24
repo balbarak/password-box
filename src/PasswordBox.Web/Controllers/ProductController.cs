@@ -12,12 +12,12 @@ using PasswordBox.Web.ViewModels.Search;
 
 namespace PasswordBox.Web.Controllers
 {
-    [BreadCrumb(
-          TitleResourceName = nameof(CommonText.Products),
-          TitleResourceType = typeof(CommonText),
-          Order = 0,
-          UseDefaultRouteUrl = true,
-          Icon = "icon-briefcase")]
+    //[BreadCrumb(
+    //      TitleResourceName = nameof(CommonText.Products),
+    //      TitleResourceType = typeof(CommonText),
+    //      Order = 0,
+    //      UseDefaultRouteUrl = true,
+    //      Icon = "icon-briefcase")]
     public class ProductController : BaseController
     {
         public IActionResult Index(ProductSearchViewModel model)

@@ -14,12 +14,12 @@ using PasswordBox.Core.Resources;
 namespace PasswordBox.Web.Controllers
 {
 
-    [BreadCrumb(
-          TitleResourceName = nameof(CommonText.Categories),
-          TitleResourceType = typeof(CommonText),
-          Order = 0,
-          UseDefaultRouteUrl = true,
-          Icon = "icon-list")]
+    //[BreadCrumb(
+    //      TitleResourceName = nameof(CommonText.Categories),
+    //      TitleResourceType = typeof(CommonText),
+    //      Order = 0,
+    //      UseDefaultRouteUrl = true,
+    //      Icon = "icon-list")]
     public class CategoryController : BaseController
     {
         private const string PARTIAL_LIST = "~/Views/Category/_List.cshtml";

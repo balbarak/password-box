@@ -106,15 +106,6 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to التصنيفات.
-        /// </summary>
-        public static string Categories {
-            get {
-                return ResourceManager.GetString("Categories", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Close {
@@ -124,7 +115,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تأكيد الاجراء.
+        ///   Looks up a localized string similar to Confirm Action.
         /// </summary>
         public static string ConfirmAction {
             get {
@@ -133,16 +124,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to d.
-        /// </summary>
-        public static string d {
-            get {
-                return ResourceManager.GetString("d", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to حذف.
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {
             get {
@@ -151,7 +133,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تفاصيل.
+        ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
             get {
@@ -160,7 +142,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تعديل.
+        ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {
             get {
@@ -169,7 +151,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to الرئيسية.
+        ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
             get {
@@ -178,7 +160,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to لا.
+        ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
             get {
@@ -187,16 +169,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to المنتجات.
-        /// </summary>
-        public static string Products {
-            get {
-                return ResourceManager.GetString("Products", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to حفظ.
+        ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
             get {
@@ -210,6 +183,15 @@ namespace PasswordBox.Core.Resources {
         public static string Select {
             get {
                 return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PasswordBox.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
         
@@ -232,16 +214,7 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to المستفيدين.
-        /// </summary>
-        public static string Users {
-            get {
-                return ResourceManager.GetString("Users", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to نعم.
+        ///   Looks up a localized string similar to Yes.
         /// </summary>
         public static string Yes {
             get {

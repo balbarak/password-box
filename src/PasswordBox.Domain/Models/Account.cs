@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace PasswordBox.Domain.Models
@@ -19,5 +20,10 @@ namespace PasswordBox.Domain.Models
 
         [StringLength(2048)]
         public string Note { get; set; }
+
+        public string UserId { get; set; }
+
+        [ForeignKey(nameof(UserId))]
+        public User User { get; set; }
     }
 }
