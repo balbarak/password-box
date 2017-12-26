@@ -127,9 +127,7 @@ function setAlert(options) {
     }
 
     if (!options.container) {
-
-        debugger;
-
+        
         $("#alert").html(html);
     }
 

@@ -1,4 +1,5 @@
-﻿using PasswordBox.Core.Extensions;
+﻿using PasswordBox.Core.Exceptions;
+using PasswordBox.Core.Extensions;
 using PasswordBox.Core.Search;
 using PasswordBox.Domain.Models;
 using System;
@@ -13,9 +14,17 @@ namespace PasswordBox.Application.Services
 
         public Account Add(Account account)
         {
+            var userId = Thread.CurrentPrincipal.GetUserId();
+
+            if (String.IsNullOrWhiteSpace(userId))
+                throw new PermissionException();
+
+            var user = UserService.Instance.GetByID(userId).Result;
+
             ValidateEntity(account);
 
-            account.UserId = Thread.CurrentPrincipal.GetUserId();
+            account.Password = EncryptionService.Instance.Encrypt(account.Password,user.PasswordHash);
+            account.UserId = user.Id;
 
             return repository.Create(account);
         }
