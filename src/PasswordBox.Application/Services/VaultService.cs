@@ -23,6 +23,7 @@ namespace PasswordBox.Application.Services
             ValidateEntity(account);
 
             account.Password = EncryptionService.Instance.Encrypt(account.Password, user.PasswordHash);
+
             account.UserId = user.Id;
 
             return repository.Create(account);
