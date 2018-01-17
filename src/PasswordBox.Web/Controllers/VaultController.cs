@@ -11,14 +11,14 @@ using PasswordBox.Web.ViewModels.Search;
 
 namespace PasswordBox.Web.Controllers
 {
-    public class PasswordBoxController : BaseController
+    public class VaultController : BaseController
     {
-        private const string PARTIAL_LIST = "~/Views/PasswordBox/_List.cshtml";
-            
+        private const string PARTIAL_LIST = "~/Views/Vault/_List.cshtml";
 
-        public IActionResult Index(AccountSearchViewModel model)
+
+        public IActionResult Index(VaultSearchViewModel model)
         {
-            var result = AccountService.Instance.Search(model.ToSearchModel());
+            var result = VaultService.Instance.Search(model.ToSearchModel());
 
             if (IsAjaxRequest())
                 return PartialView(PARTIAL_LIST, result);
@@ -28,13 +28,13 @@ namespace PasswordBox.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Add(Account model)
+        public IActionResult Add(Vault model)
         {
             JsonResultObject result = new JsonResultObject();
 
             try
             {
-                AccountService.Instance.Add(model);
+                VaultService.Instance.Add(model);
 
                 SetSuccess(result);
             }
@@ -56,7 +56,7 @@ namespace PasswordBox.Web.Controllers
 
             try
             {
-                AccountService.Instance.Delete(id);
+                VaultService.Instance.Delete(id);
 
                 SetSuccess(result);
             }

@@ -1,4 +1,4 @@
-﻿@model SearchResult<Account>
+﻿@model SearchResult<Vault>
 
 @if (Model.Result.Any())
 {
@@ -32,7 +32,7 @@
                 </td>
                 <td width="180">
                     <button class="btn btn-danger btn-sm"
-                            data-action="@Url.Action("Delete", "PasswordBox", new { id = item.Id })"
+                            data-action="@Url.Action("Delete", "Vault", new { id = item.Id })"
                             data-toggle="modal"
                             data-target="#confirm-ajax-modal">
                         <i class="fa fa-trash"></i>

@@ -15,13 +15,9 @@ namespace PasswordBox.Persistance
 {
     public class PasswordBoxDbContext : IdentityDbContext<User, Role, string>
     {
-        public DbSet<Category> Categories { get; set; }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Vault> Vaults { get; set; }
 
-        public DbSet<ProductItem> ProductItems { get; set; }
-
-        public DbSet<Account> Accounts { get; set; }
 
         public PasswordBoxDbContext()
         {
@@ -63,10 +59,7 @@ namespace PasswordBox.Persistance
             builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
             builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
-
-            builder.Entity<Product>().HasMany(a => a.Items)
-                .WithOne(a => a.Product)
-                .OnDelete(DeleteBehavior.Cascade);
+            
 
         }
         

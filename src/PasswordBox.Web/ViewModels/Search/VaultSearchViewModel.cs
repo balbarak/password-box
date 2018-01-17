@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PasswordBox.Web.ViewModels.Search
 {
-    public class CategorySearchViewModel : SearchViewModelBase<Category>
+    public class VaultSearchViewModel : SearchViewModelBase<Vault>
     {
+
     }
 }

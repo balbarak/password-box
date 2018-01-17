@@ -9,10 +9,9 @@ using System.Threading;
 
 namespace PasswordBox.Application.Services
 {
-    public class AccountService : ServiceBase<AccountService>
+    public class VaultService : ServiceBase<VaultService>
     {
-
-        public Account Add(Account account)
+        public Vault Add(Vault account)
         {
             var userId = Thread.CurrentPrincipal.GetUserId();
 
@@ -23,7 +22,7 @@ namespace PasswordBox.Application.Services
 
             ValidateEntity(account);
 
-            account.Password = EncryptionService.Instance.Encrypt(account.Password,user.PasswordHash);
+            account.Password = EncryptionService.Instance.Encrypt(account.Password, user.PasswordHash);
             account.UserId = user.Id;
 
             return repository.Create(account);
@@ -31,10 +30,10 @@ namespace PasswordBox.Application.Services
 
         public void Delete(int id)
         {
-            repository.Delete<Account>(id);
+            repository.Delete<Vault>(id);
         }
 
-        public SearchResult<Account> Search(SearchCriteria<Account> search)
+        public SearchResult<Vault> Search(SearchCriteria<Vault> search)
         {
             var userId = Thread.CurrentPrincipal.GetUserId();
 

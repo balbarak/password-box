@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PasswordBox.Domain.Models
 {
-    public class Account : AuditableEntity
+    public class Vault : AuditableEntity
     {
         [Required]
         [StringLength(2048)]

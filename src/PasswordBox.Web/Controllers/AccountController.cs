@@ -456,7 +456,7 @@ namespace PasswordBox.Web.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "PasswordBox");
+                return RedirectToAction(nameof(HomeController.Index), "Vault");
             }
         }
 

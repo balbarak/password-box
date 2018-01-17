@@ -11,9 +11,10 @@ using System;
 namespace PasswordBox.Persistance.Migrations
 {
     [DbContext(typeof(PasswordBoxDbContext))]
-    partial class PasswordBoxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180117224224_Valuts")]
+    partial class Valuts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,6 +103,101 @@ namespace PasswordBox.Persistance.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("UserTokens");
+                });
+
+            modelBuilder.Entity("PasswordBox.Domain.Models.Account", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CreatedByUserId");
+
+                    b.Property<DateTime?>("CreatedDate");
+
+                    b.Property<string>("ModifiedByUserId");
+
+                    b.Property<DateTime?>("ModifiedDate");
+
+                    b.Property<string>("Note")
+                        .HasMaxLength(2048);
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.Property<string>("UserId");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(2048);
+
+                    b.Property<string>("Website");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Accounts");
+                });
+
+            modelBuilder.Entity("PasswordBox.Domain.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("PasswordBox.Domain.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CategoryID");
+
+                    b.Property<string>("CreatedByUserId");
+
+                    b.Property<DateTime?>("CreatedDate");
+
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<string>("ModifiedByUserId");
+
+                    b.Property<DateTime?>("ModifiedDate");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryID");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("PasswordBox.Domain.Models.ProductItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("ProductId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductItems");
                 });
 
             modelBuilder.Entity("PasswordBox.Domain.Models.Role", b =>
@@ -257,6 +353,29 @@ namespace PasswordBox.Persistance.Migrations
                     b.HasOne("PasswordBox.Domain.Models.User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PasswordBox.Domain.Models.Account", b =>
+                {
+                    b.HasOne("PasswordBox.Domain.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("PasswordBox.Domain.Models.Product", b =>
+                {
+                    b.HasOne("PasswordBox.Domain.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PasswordBox.Domain.Models.ProductItem", b =>
+                {
+                    b.HasOne("PasswordBox.Domain.Models.Product", "Product")
+                        .WithMany("Items")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

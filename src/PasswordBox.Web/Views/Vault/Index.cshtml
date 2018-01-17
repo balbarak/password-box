@@ -1,4 +1,4 @@
-﻿@model SearchResult<Account>
+﻿@model SearchResult<Vault>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,13 +6,13 @@
 }
 
 <h1 class="page-header">
-    My Accounts
+    Vaults
 </h1>
 
 
 <button class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
     <i class="fa fa-plus"></i>
-    Add New Account
+    Add New
 </button>
 
 <br />
@@ -33,7 +33,7 @@
 
     <form id="add-form"
           asp-ajax="true"
-          asp-controller="PasswordBox"
+          asp-controller="Vault"
           asp-action="Add"
           asp-ajax-error="#add-alert"
           asp-ajax-modal="#add-modal"
@@ -44,7 +44,7 @@
         <bootstrap-modal-body>
             <div id="add-alert" data-alert=""></div>
 
-            @Html.Partial("_Form", new Account())
+            @Html.Partial("_Form", new Vault())
         </bootstrap-modal-body>
 
         <bootstrap-modal-footer asp-show-close-button="true">
