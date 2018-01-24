@@ -11,9 +11,10 @@ using System;
 namespace PasswordBox.Persistance.Migrations
 {
     [DbContext(typeof(PasswordBoxDbContext))]
-    partial class PasswordBoxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180124223420_ChangeUserNameToLogin")]
+    partial class ChangeUserNameToLogin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -202,9 +203,6 @@ namespace PasswordBox.Persistance.Migrations
                         .HasMaxLength(2048);
 
                     b.Property<string>("Password")
-                        .IsRequired();
-
-                    b.Property<string>("Title")
                         .IsRequired();
 
                     b.Property<string>("UserId");

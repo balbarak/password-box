@@ -5,7 +5,7 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                @Html.DisplayNameFor(a => a.Result.First().Username)
+                @Html.DisplayNameFor(a => a.Result.First().Title)
             </th>
             <th>
                 @Html.DisplayNameFor(a => a.Result.First().Website)
@@ -22,7 +22,7 @@
         {
             <tr>
                 <td>
-                    @item.Username
+                    @item.Title
                 </td>
                 <td>
                     @item.Website
@@ -31,6 +31,14 @@
                     @item.Note
                 </td>
                 <td width="180">
+                    <button class="btn btn-primary btn-sm"
+                            data-action="@Url.Action("Delete", "Vault", new { id = item.Id })"
+                            data-toggle="modal"
+                            data-target="#confirm-ajax-modal">
+                        <i class="fa fa-eye"></i>
+                        @CommonText.Display
+                    </button>
+
                     <button class="btn btn-danger btn-sm"
                             data-action="@Url.Action("Delete", "Vault", new { id = item.Id })"
                             data-toggle="modal"

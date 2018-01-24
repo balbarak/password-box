@@ -114,3 +114,8 @@ nav ul li div {
     background-color: #EAEAEA;
 }
 /*========== END BOOTSTRAP DATETIMEPICKER 3 ==========*/
+
+
+.eye {
+    cursor: pointer;
+}

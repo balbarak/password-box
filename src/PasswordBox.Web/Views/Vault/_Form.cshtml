@@ -2,11 +2,21 @@
 
 <div class="form-group">
 
-    <label class="control-label" asp-for="Username">
-        @Html.DisplayNameFor(a => a.Username)
+    <label class="control-label" asp-for="Title">
+        @Html.DisplayNameFor(a => a.Title)
     </label>
-    <input type="text" asp-for="Username" class="form-control" />
-    <span asp-validation-for="Username"></span>
+    <input type="text" asp-for="Title" class="form-control" placeholder="@Html.DisplayNameFor(a=> a.Title) ..." />
+    <span asp-validation-for="Title"></span>
+
+</div>
+
+<div class="form-group">
+
+    <label class="control-label" asp-for="Login">
+        @Html.DisplayNameFor(a => a.Login)
+    </label>
+    <input type="text" autocomplete="off" asp-for="Login" class="form-control" placeholder="@Html.DisplayNameFor(a=> a.Login) ..." />
+    <span asp-validation-for="Login"></span>
 
 </div>
 
@@ -15,7 +25,17 @@
     <label class="control-label" asp-for="Password">
         @Html.DisplayNameFor(a => a.Password)
     </label>
-    <input type="text" asp-for="Password" class="form-control" />
+    <div class="input-group">
+        <input type="password" asp-for="Password" 
+               autocomplete="off" 
+               class="form-control" 
+               placeholder="@Html.DisplayNameFor(a=> a.Password) ..." />
+
+        <div class="input-group-addon eye">
+            <span class="fa fa-eye-slash" data-click-state="0"></span>
+        </div>
+    </div>
+
     <span asp-validation-for="Password"></span>
 
 </div>
@@ -25,7 +45,7 @@
     <label class="control-label" asp-for="Website">
         @Html.DisplayNameFor(a => a.Website)
     </label>
-    <input type="text" asp-for="Website" class="form-control" />
+    <input type="text" asp-for="Website" class="form-control" placeholder="@Html.DisplayNameFor(a=> a.Website) ..." />
 
 
 </div>
@@ -35,7 +55,7 @@
     <label class="control-label" asp-for="Note">
         @Html.DisplayNameFor(a => a.Note)
     </label>
-    <textarea asp-for="Note" class="form-control" rows="4">
+    <textarea asp-for="Note" class="form-control" placeholder="@Html.DisplayNameFor(a=> a.Note) ..." rows="4">
 
 </textarea>
 

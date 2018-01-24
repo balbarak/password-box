@@ -32,7 +32,7 @@ namespace PasswordBox.Persistance
 
         public void EnsureSeeding()
         {
-            SeedRoles();
+            //SeedRoles();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

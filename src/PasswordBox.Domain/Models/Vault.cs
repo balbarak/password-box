@@ -10,8 +10,11 @@ namespace PasswordBox.Domain.Models
     public class Vault : AuditableEntity
     {
         [Required]
+        public string Title { get; set; }
+
+        [Required]
         [StringLength(2048)]
-        public string Username { get; set; }
+        public string Login { get; set; }
 
         [Required]
         public string Password { get; set; }
