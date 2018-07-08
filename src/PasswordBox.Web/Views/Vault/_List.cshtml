@@ -31,7 +31,19 @@
                 <td>
                     @item.Note
                 </td>
-                <td width="180">
+                <td width="250">
+                    <a asp-ajax="true"
+                       asp-action="Display"
+                       asp-controller="Vault"
+                       asp-route-id="@item.Id"
+                       asp-ajax-block="#list"
+                       asp-ajax-replace="#display-div"
+                       asp-ajax-complete-method="showModal('#display-modal')"
+                       class="btn btn-info btn-sm">
+                        <i class="fa fa-eye"></i>
+                        @CommonText.Edit
+                    </a>
+
                     <a asp-ajax="true"
                        asp-action="Display"
                        asp-controller="Vault"
