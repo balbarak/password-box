@@ -1,4 +1,5 @@
 ﻿using PasswordBox.Core.Entities;
+using PasswordBox.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -28,5 +29,25 @@ namespace PasswordBox.Domain.Models
 
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }
+
+        public Vault Encrypt(string key)
+        {
+            EncryptionService service = new EncryptionService();
+            
+            this.Login = service.Encrypt(Login, key);
+            this.Password = service.Encrypt(Password, key);
+
+            return this;
+        }
+
+        public Vault Decrypt(string key)
+        {
+            EncryptionService service = new EncryptionService();
+            
+            this.Login = service.Decrypt(Login, key);
+            this.Password = service.Decrypt(Password, key);
+
+            return this;
+        }
     }
 }

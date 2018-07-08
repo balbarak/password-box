@@ -160,6 +160,15 @@ namespace PasswordBox.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is no data.
+        /// </summary>
+        public static string EmptyData {
+            get {
+                return ResourceManager.GetString("EmptyData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {

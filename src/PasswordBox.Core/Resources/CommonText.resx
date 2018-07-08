@@ -174,4 +174,7 @@
   <data name="Display" xml:space="preserve">
     <value>Display</value>
   </data>
+  <data name="EmptyData" xml:space="preserve">
+    <value>There is no data</value>
+  </data>
 </root>

@@ -5,7 +5,7 @@
     <label class="control-label" asp-for="Title">
         @Html.DisplayNameFor(a => a.Title)
     </label>
-    <input type="text" asp-for="Title" class="form-control" placeholder="@Html.DisplayNameFor(a=> a.Title) ..." />
+    <input type="text" asp-for="Title" autocomplete="off" class="form-control" placeholder="@Html.DisplayNameFor(a=> a.Title) ..." />
     <span asp-validation-for="Title"></span>
 
 </div>

@@ -59,8 +59,35 @@
 </bootstrap-modal>
 
 
+<bootstrap-modal id="display-modal" asp-content-id="display-content" data-reset-form="true">
+
+    <bootstrap-modal-header>
+        <h4 class="modal-title">
+            @CommonText.Add
+        </h4>
+
+    </bootstrap-modal-header>
+
+
+    <bootstrap-modal-body>
+        <div id="display-alert" data-alert=""></div>
+
+        <div id="display-div">
+
+        </div>
+
+    </bootstrap-modal-body>
+
+    <bootstrap-modal-footer asp-show-close-button="true">
+
+    </bootstrap-modal-footer>
+
+
+</bootstrap-modal>
+
+
 @section scripts{
-    
+
     <script src="~/js/password-checker.js"></script>
 
     <script>

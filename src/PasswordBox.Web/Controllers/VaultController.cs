@@ -14,6 +14,8 @@ namespace PasswordBox.Web.Controllers
     public class VaultController : BaseController
     {
         private const string PARTIAL_LIST = "~/Views/Vault/_List.cshtml";
+        private const string PARTIAL_FORM = "~/Views/Vault/_Form.cshtml";
+        private const string PARTIAL_DISPLAY = "~/Views/Vault/_Display.cshtml";
 
 
         public IActionResult Index(VaultSearchViewModel model)
@@ -65,6 +67,43 @@ namespace PasswordBox.Web.Controllers
                 SetError(result, ex);
 
                 return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            JsonResultObject result = new JsonResultObject();
+
+            try
+            {
+                var model = VaultService.Instance.GetById(id);
+
+                result.PartialViewHtml = await RenderService.RenderToStringAsync(PARTIAL_FORM, model);
+            }
+            catch (PermissionException)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+        }
+
+        public async Task<IActionResult> Display(int id)
+        {
+            JsonResultObject result = new JsonResultObject();
+
+            try
+            {
+                var model = VaultService.Instance.GetById(id);
+
+                result.PartialViewHtml = await RenderService.RenderToStringAsync(PARTIAL_DISPLAY, model);
+
+            }
+            catch (PermissionException)
+            {
+                return NotFound();
             }
 
             return Ok(result);

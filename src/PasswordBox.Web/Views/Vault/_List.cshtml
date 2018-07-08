@@ -2,6 +2,7 @@
 
 @if (Model.Result.Any())
 {
+<div class="table-responsive">
     <table class="table table-bordered table-striped">
         <tr>
             <th>
@@ -31,13 +32,17 @@
                     @item.Note
                 </td>
                 <td width="180">
-                    <button class="btn btn-primary btn-sm"
-                            data-action="@Url.Action("Delete", "Vault", new { id = item.Id })"
-                            data-toggle="modal"
-                            data-target="#confirm-ajax-modal">
+                    <a asp-ajax="true"
+                       asp-action="Display"
+                       asp-controller="Vault"
+                       asp-route-id="@item.Id"
+                       asp-ajax-block="#list"
+                       asp-ajax-replace="#display-div"
+                       asp-ajax-complete-method="showModal('#display-modal')"
+                       class="btn btn-info btn-sm">
                         <i class="fa fa-eye"></i>
                         @CommonText.Display
-                    </button>
+                    </a>
 
                     <button class="btn btn-danger btn-sm"
                             data-action="@Url.Action("Delete", "Vault", new { id = item.Id })"
@@ -50,8 +55,11 @@
             </tr>
         }
     </table>
+</div>
 }
 else
 {
-
+    <div class="alert alert-danger" role="alert">
+        @CommonText.EmptyData
+    </div>
 }
